@@ -1,4 +1,4 @@
-var app = angular.module('Tinker',['ngRoute','ngMaterial'])
+var app = angular.module('Tinker',['ngRoute','ngMaterial','directive.g+signin'])
     app.config(['$routeProvider',function($routeProvider){
         $routeProvider
         .when('/', { title:"Home", controller:'HomeCtrl', templateUrl:'views/home.html' })
