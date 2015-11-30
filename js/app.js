@@ -1,7 +1,12 @@
-var app = angular.module('Tinker',['ngRoute','ngMaterial','directive.g+signin'])
+var app = angular.module('Tinker',['ngRoute','ngMaterial'])
+    app.value('baseUrl','http://localhost/TinkerCake/api/');
     app.config(['$routeProvider',function($routeProvider){
         $routeProvider
-        .when('/', { title:"Home", controller:'HomeCtrl', templateUrl:'views/home.html' })
+
+        .when('/',      { title:"Login", controller:'LoginCtrl', templateUrl:'views/login.html' })
+        .when('/login', { title:"Login", controller:'LoginCtrl', templateUrl:'Views/login.html' })
+
+        .when('/create-team', { title:"Create Team", controller:'CreateTeamCtrl', templateUrl:'views/create-team.html' })
         .otherwise({redirectTo:'/'});
     }]);
 
