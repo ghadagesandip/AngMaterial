@@ -7,6 +7,7 @@ var app = angular.module('Tinker',['ngRoute','ngMaterial'])
         .when('/login', { title:"Login", controller:'LoginCtrl', templateUrl:'views/login.html' })
         .when('/logout', { title:"Logout", controller:'LogoutCtrl', template:'' })
         .when('/create-team', { title:"Create Team", controller:'CreateTeamCtrl', templateUrl:'views/create-team.html' })
+        .when('/add-team-members', { title:"Add Team Members", controller:'AddTeamMemberCtrl', templateUrl:'views/add-team-member.html' })
         .otherwise({redirectTo:'/'});
     }]);
 

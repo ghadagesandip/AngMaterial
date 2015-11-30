@@ -26,9 +26,9 @@ app.factory('loginFact',['$http','$location','baseUrl',function($http, $location
         },
 
         isLoggedIn : function(){
-            var userId =   this.getCookie('userId');
+            var memberID =   this.getCookie('memberID');
 
-            if(typeof userId == 'undefined' || userId==""){
+            if(typeof memberID == 'undefined' || memberID==""){
                 return false
             }
             return true;
@@ -38,18 +38,23 @@ app.factory('loginFact',['$http','$location','baseUrl',function($http, $location
         getName : function(){
 
             if(this.isLoggedIn()){
-                return this.getCookie('name');
+                return this.getCookie('google_name');
             }else{
                 $location.path('/home');
             }
         },
 
         deleteCookies : function(){
-            document.cookie = "userId=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-            document.cookie = "roleId=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-            document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-
-            return !this.isLoggedIn();
+            document.cookie = "memberID=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            document.cookie = "first_name=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            document.cookie = "last_name=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            document.cookie = "google_name=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            document.cookie = "google_image_url=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            document.cookie = "googleid=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            document.cookie = "is_organizer=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            document.cookie = "active=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            return true;
         }
 
     }

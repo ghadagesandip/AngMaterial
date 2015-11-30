@@ -19,22 +19,18 @@ app.controller('LoginCtrl',['$scope','$window','$location','loginFact',function(
 
         loginFact.authenticate(userDetails)
             .success(function(data, status, headers, config){
-                $scope.loginerror = !data.login;
-                if(data.login===false && status==200){
-                    $scope.ctrlerror = data.message;
-                }else{
-                    // login successfull
-                    $scope.ctrlerror = '';
-                    loginFact.setCookie('userId',data.id,360);
-                    loginFact.setCookie('first_name',data.first_name,360);
-                    loginFact.setCookie('last_name',data.last_name,360);
-                    loginFact.setCookie('google_name',data.google_name,360);
-                    loginFact.setCookie('google_image_url',data.google_image_url,360);
-                    loginFact.setCookie('google_image_url',data.google_image_url,360);
-                    loginFact.setCookie('googleid',data.googleid,360);
-                    loginFact.setCookie('email',data.email,360);
-                    loginFact.setCookie('is_organizer',data.is_organizer,360);
-                    loginFact.setCookie('active',data.active,360);
+
+                if(data.status===true && status==200){
+
+                    loginFact.setCookie('memberID',data.data.id,360);
+                    loginFact.setCookie('first_name',data.data.first_name,360);
+                    loginFact.setCookie('last_name',data.data.last_name,360);
+                    loginFact.setCookie('google_name',data.data.google_name,360);
+                    loginFact.setCookie('google_image_url',data.data.google_image_url,360);
+                    loginFact.setCookie('googleid',data.data.googleid,360);
+                    loginFact.setCookie('email',data.data.email,360);
+                    loginFact.setCookie('is_organizer',data.data.is_organizer,360);
+                    loginFact.setCookie('active',data.data.active,360);
                     $location.path('/create-team');
                 }
             })

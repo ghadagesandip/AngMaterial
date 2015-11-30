@@ -1,5 +1,5 @@
 
-app.controller('CreateTeamCtrl',['$scope','$location','loginFact','TeamFactory',function($scope,$location,loginFact,TeamFactory){
+app.controller('AddTeamMemberCtrl',['$scope','$location','loginFact','TeamFactory',function($scope,$location,loginFact,TeamFactory){
 
     $scope.submitted = false;
 
