@@ -3,6 +3,7 @@ app.controller('LoginCtrl',['$scope','$window','$location','loginFact',function(
     $scope.loginerror = false;
     $scope.ctrlerror = '';
 
+
     $window.onSignIn = function(googleUser){
         var profile = googleUser.getBasicProfile();
 

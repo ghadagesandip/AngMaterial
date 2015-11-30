@@ -4,8 +4,8 @@ var app = angular.module('Tinker',['ngRoute','ngMaterial'])
         $routeProvider
 
         .when('/',      { title:"Login", controller:'LoginCtrl', templateUrl:'views/login.html' })
-        .when('/login', { title:"Login", controller:'LoginCtrl', templateUrl:'Views/login.html' })
-
+        .when('/login', { title:"Login", controller:'LoginCtrl', templateUrl:'views/login.html' })
+        .when('/logout', { title:"Logout", controller:'LogoutCtrl', template:'' })
         .when('/create-team', { title:"Create Team", controller:'CreateTeamCtrl', templateUrl:'views/create-team.html' })
         .otherwise({redirectTo:'/'});
     }]);
